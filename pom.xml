@@ -27,9 +27,26 @@
 				<configuration>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.2.2</muleVersion>
+						<username>hmule61</username>
+						<password>Welcome@123</password>
+						<applicationName>test1</applicationName>
+						<environment>Sandbox</environment>
+			     		<workerType>Micro</workerType> 
+			       		<workers>1</workers>
+					</cloudHubDeployment>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
 	<dependencies>
         <dependency>
             <groupId>org.mule.connectors</groupId>
