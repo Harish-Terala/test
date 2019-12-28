@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7e1d4b8b-2546-4953-8c78-a70a91048c43" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="testprojectFlow" doc:id="468cab61-5e9a-4da1-99ca-f4f7185e5d79" >
+		<http:listener doc:name="Listener" doc:id="7b0edf66-b520-4b00-92da-e62fb2488502" config-ref="HTTP_Listener_config" path="/test"/>
+		<logger level="INFO" doc:name="Logger" doc:id="c27fe3b7-ccf3-41d9-924f-370e0081d5f2" message="Flow starts..........."/>
+		<set-payload value="my new test project" doc:name="Set Payload" doc:id="2b61654f-925d-4d15-8c67-84dcab57890e" />
+		<logger level="INFO" doc:name="Logger" doc:id="bbdb9bac-be03-4989-b3b6-cd1c6328a0a4" message="Flow ends............"/>
+	</flow>
+</mule>
